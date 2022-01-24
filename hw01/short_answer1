@@ -1,0 +1,28 @@
+2.1 Why would it be a bad idea to enter the following bash commands?
+
+cd
+rm -r*
+
+cd will go to home directory and rm -r* will delete all files with no warning.
+
+2.3 What is the difference between compiling and linking?
+
+Compiling reads your code file and generates an object file. Linking connects all object files to produce an executable.
+
+2.9 Would the following code compile in C++? Why or why not?
+
+double x=32.0;
+int n=x;
+
+Yes, the code will compile but because x is a double and n is an int the values after the decimal will be cut off.
+
+2.10 What is wrong with the following code, and how would you fix it?
+
+int sum;
+for(int i=0; i<1000; ++i)
+{
+sum +=i;
+}
+printf("Sum of 0 to 999 is %d\n", sum);
+
+int sum is not initialized, I would initialize sum to 0. I would also rewrite ++i as i++.
