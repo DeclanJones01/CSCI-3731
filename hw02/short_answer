@@ -1,0 +1,15 @@
+2. What is the difference between a function declaration and a function definition?
+	Declare a function to tell the compiler that it exists and describe its arguments and return type.
+	Then elsewhere in the code you define the function by providing the code it executes.
+3. Why does C/C++ need to have function declarations? Why doesn’t Java have them?
+	The C/C++ compiler makes one pass through the code, while the Java
+	compiler makes two.
+4. What is the C preprocessor, and what does it do?
+	A separate program that does simple text manipulations, based on directives
+	that all begin with #.
+5. What do you use header files for?
+	Header files include declarations so you don't have to declare multiple functions across different files.
+8. Suppose you have the following:
+#define MAX_VALUE 32767
+Is MAX VALUE a variable? If not, what is it?
+	MAX_VALUE is not a variable but it is a preprocessor macro.
