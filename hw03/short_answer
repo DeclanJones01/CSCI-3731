@@ -1,0 +1,49 @@
+ 1. What is a pointer? What is the closest thing to a pointer in Java?
+ 
+ They give you direct access to your computer’s memory. Pointers can allow you to return multiple variables in a function. The closest thing in java is a primitive value.
+ 
+ 9. Describe what each of the following declare:
+(a) int* a;
+A variable, a, that if you dereference it, is an int.
+
+(b) const int b;
+An int b with a const value that won't let you change it.
+
+(c) const int* c;
+This is a const pointer to a const int. You can’t modify the pointer or the data it points to.
+
+(d) int* const d;
+This is a const pointer to a non-const int. You can modify the data it points to but not the pointer.
+
+(e) const int* const e;
+This declares a const pointer to a const int.
+
+
+12. This code computes both the square and cube of a number. What is wrong with it and, how would you fix it?
+double* powers(double x, double* x3_ptr) {
+double x2 = x*x;
+*x3_ptr = x2*x;
+return &x2;
+}
+
+The function should be just "double" instead of "double*". Only x2 is returned so unless you didn't need x3 you 
+should also return x3 but you also don't need to return when you use pointers because the whole point is that they point to the memory location.
+If you wanted to reference the variables you could use &x2 in a print line.
+
+14. Sometimes when you call this function, you get a seg fault. In what line is the seg fault occurring?
+void twitchy(int in, int* out) {
+int sum = 0;
+for(int i=0; i<n; ++i) {
+if(i%2) sum + 5;
+else sum /= 2;
+}
+*out = sum;
+}
+
+The fault is in the line *out because outside of the loop sum =0.
+
+15. 15. The following code does not compile. What is wrong and how would you fix it?
+int n = -1;
+scanf("%d", n);
+
+Instead of n you need to put &n for the memory location of n.
