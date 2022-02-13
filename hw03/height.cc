@@ -18,7 +18,7 @@ double height(double angle, double* x2, double* y2) {
         double t = 0.0;
 		double x1 = 0.0;
 		double y1 = 0.0;
-		doublt dt = 1.0;
+		double dt = 1.0;
 
         while (y >= 0.0) {
 

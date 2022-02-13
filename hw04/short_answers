@@ -1,0 +1,40 @@
+1. Describe the difference between how Java and C++ handle arrays.
+
+In C/C++ an array is just a chunk of allocated memory. It doesn’t keep track of the size of the array. In Java, arrays are objects. The object holds
+not only the items in the array, but also the allocated size of the array.
+
+3. Suppose you have a variable declared like this:
+int* n;
+Can you pass n to a function declared like this:
+void f(const int* b);
+Why or why not?
+
+You would not be able to pass n to void f because it calls for a const int*.
+
+5. Suppose you have a function that takes an array as an argument in the usual way, which is
+declared as:
+void f(int* array, int length);
+Suppose you also have an array declared as:
+int a[128];
+How would you pass a sub-array containing only the third through sixth elements of a to the
+function f?
+
+int b[4] = (a+3);
+
+6. What is wrong with the following code, and how would you fix it?
+char copy[8];
+const char* string = "hello";
+for(int i=0; string[i] != ’\0’; ++i) {
+copy[i] = string[i];
+}
+printf("%s\n", copy);
+
+There is no value set to '\0' in string. You should set the value after the o in hello to '\0'.
+
+8. What is wrong with the following code and how would you fix it?
+double* allocateArray(int length) {
+double array[length];
+return array;
+}
+
+the function was declared as a pointer but it returns the array like a normal value. The function should be declared without the *.
