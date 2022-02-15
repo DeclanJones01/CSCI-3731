@@ -65,8 +65,15 @@ void wavy(int a) {
 		if(!strncmp(FOURCC, "data", 4))
 		{
 			
-			int data_data = *((int*)(content));
-			printf(" data_data: %d\n", data_data);
+			short* sample = ((short*)(content));
+			printf(" sample: %d\n", sample);
+			
+			int i=0;
+			while(i<(size/2))
+			{
+				printf(" sample : %d\n", sample[i]);
+				i++;
+			}
 			
 		}
 	}
