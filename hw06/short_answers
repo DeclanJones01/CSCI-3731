@@ -1,0 +1,36 @@
+1. What are libraries good for?
+
+Libraries are good for  saving time and simplifying code  by re using code someone else made and making it work for you.
+
+2. What are the two types of library and how are they different?
+
+A static library works just like the object files it is made of. When
+you link to a static library, its object files become part of the executable, just like individual object
+files do. A shared object library (also known as a dynamic linked library) behaves differently.
+Shared object libraries remain separate from the executable, and the machine code they contain is
+loaded by the executable at runtime.
+
+3. Why is it better to get a library from a package manager, rather than compile it from source
+yourself. When might it be better to compile a library yourself?
+
+The most wonderful thing about a package manager is that someone has made sure that the
+versions of all the libraries are compatible with each other. Not only that, but the package manager
+keeps track of the dependencies of each package and recursively installs them as needed. It might be better for you to 
+compile a library yourself when you are trying to figure out how it works in order to add it to your own code.
+
+4. Suppose you are on MacOS and you want to use a library in the file
+/usr/local/lib/libpng.dylib that has the accompanying header file
+/usr/local/include/png.h. Suppose also that your program consists of one file
+called main.cc. Write the Makefile for this project.
+
+all: main
+
+main.o: main.cc png.h libpng.dylib
+	g++ -c -Wall -Werror main.cc
+
+main: main.o libpng.o
+	g++ -o main main.o libpng.o
+
+5. What is a struct?
+
+A struct is a class with no methods, and all of its data members public. 
