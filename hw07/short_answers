@@ -1,0 +1,49 @@
+1. What is wrong with the following code and how would you fix it?
+#ifndef PROJECTILE_H
+#define PROJECTILE_H
+class Projectile {
+private:
+double position;
+double velocity;
+public:
+Projectile(double position, double velocity);
+virtual ˜Projectile();
+double getPosition() const;
+double getVelocity() const;
+} // end of Projecile class
+#endif
+
+The code is missing the semicolon after the bracket at the end of the class.
+
+2. The following is the definition of the constructor for the Projectile class above, but there are
+three things wrong with it. What are they and how would you fix them?
+Projectile(int position, int velocity) {
+this.position = position;
+this.velocity = velocity;
+} // end of constructor
+
+Position and velocity were doubles in the header file. Instead of this the code should have ->. There is no class in front of this. so the 
+compiler won't know what class it belongs to. It should go, Projectile:: ...
+
+3. Describe each of the following methods
+(a) int* method(int* arg);
+Method is a pointer that returns an int with a pointer argument, arg that also returns an int.
+(b) const int* method(int* arg);
+Method is a pointer that returns a const int with a pointer argument, arg that returns an int.
+(c) const int* const method(int* arg);
+Method is a const pointer that returns a const int with a pointer argument, arg that returns an int.
+(d) const int* const method(const int* arg);
+Method is a const pointer that returns a const int with a pointer argument, arg that returns a const int.
+(e) const int* const method(const int* arg) const;
+Method is a const pointer that returns a const int with a pointer argument, arg that returns a const int. The whole method is a const so other methods 
+would not be able to modify it.
+
+
+
+5. What is the difference between a pointer and a reference?
+A reference is basically a pointer, except: automatically dereferenced, have to assign when declared, can't change what it points to, can't be nullptr.
+
+
+10.Why would you never declare a method like this?
+void method(const int value);
+The method is not const but the value inside is so the method is not making a promise that it won't try to alter the value.
