@@ -1,5 +1,6 @@
 #ifndef VECTOR_H
 #define VECTOR_H
+#include <iostream>
 
  class vector {
 	
@@ -16,19 +17,15 @@
  double getX() const;
  double getY() const;
  double getZ() const;
- double addv(const vector& v1, const vector& v2) const;
- double subv(const vector& v1, const vector& v2) const;
+ vector operator+(const vector& v)const;
+ vector operator-(const vector& v)const;
  vector& operator+=(const vector& v1);
- double muldv(const vector& v1) const;
- double mulvv(const vector& v1, const vector& v2) const;
+ vector operator*(double v)const;
+ double operator*(const vector& v)const;
  
- /*
- double subv() const;
- double addplv() const;
- double muldv() const;
- double mulvv() const;
-*/
  void set(double x, double y, double z);
+ 
+ friend std::ostream& operator<<(std::ostream& out, const vector& v);
 
  }; // end of vector class
 
