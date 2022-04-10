@@ -1,0 +1,32 @@
+2. Why would you mark a method as virtual? Why wouldn’t you?
+Marking a method virtual means that a subclass can override that method. Not using virtual could be useful if you have a very large number of very small
+classes running on a machine without much memory.
+
+4. What is the difference between a dynamic cast and a static cast? Why would you use one
+over the other?
+Dynamic casting looks at the actual type of the object being cast and checks if it is legal to cast it to the requested type. 
+Static casts check what they can at compile time, but do not look at the actual type of the object at runtime. You should use dynamic at all times where
+safety matters. You should use static when you need a little bit more speed and you are sure you are casting properly.
+
+6. Suppose you have a Fruit base class and a Banana subclass. Suppose you have a banana
+declared like this:
+Banana b;
+What is the difference between what happens when you pass your banana to a method declared like this:
+void eat(Fruit f);
+vs. one declared like this:
+void eat(const Fruit& f);.
+In the first method f is a Fruit object, because it is copied and in the second method it is a reference. In the second method the banana is referenced 
+as a fruit.
+
+9. Suppose you have an Exception class. What is wrong with the following code and how
+would you fix it?
+throw new Exception("Help me, Spock");
+It should be, throw Exception("Help me, Spock");. 
+
+10. What is wrong with the following code and how would you fix it?
+try {
+// some code here that might throw an exception
+} catch(Exception e) {
+std::cerr << "Error occurred: "<<e.what()<<std::endl;
+}
+It should be, } catch(Exception& e) {.
