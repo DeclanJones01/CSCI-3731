@@ -1,0 +1,19 @@
+
+1. What is a template?
+A template is an instruction on how to make a class so you don't have to make a whole nother class everytime you want to change a variable type.
+
+2. What is the fundamental difference between how Java and C++ implement collections?
+Java has "object" which is a universal base class so you don't have to re write a whole class to support another data type. C++ does not have a 
+universal base class so templates are the next best thing.
+
+3. What is the difference between a template and a class?
+A template is a general, empty guideline on what a class would do and can not compile without instructions on data types. Templates also don't 
+have method bodies in a seperate .cc file because they can't be compiled without instructions on types.
+
+7. What is the difference between the meaning of <> in a Java generic and in a C++ template
+instantiation?
+In C++, the <> means you are creating an entirely new class that is custom-written to contain std::strings. In Java
+no matter what you put in the <>s, the ArrayList contains Objects. You are just specifying that those Objects will automatically be cast to Strings. 
+
+8. Why can’t you store references in a container?
+There is no way to initialize the references when you create them.
