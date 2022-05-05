@@ -1,0 +1,20 @@
+2,6,7,8,12
+2. Describe “ownership” as it pertains to C++ memory management
+
+Ownership in memory management decides who's job it is to delete data. Typically the owner is the one who created the data but ownership can be passed.
+
+6. What is the “rule of five”?
+
+Copy constructor, destructor, copy operator=, move operator=, move constructor , if your class uses heap data you have to implement all 5.
+
+7. What is copy elision?
+
+A way that compilers avoid copying when you retrurn or pass in an actual object that avoids the copy.
+
+8. What is the difference between “copying” and “moving” an object?
+
+Moving is copying the pointer instead of the data being pointed to so it's more efficient and move is only ok when the variable is temporary.
+
+12. When would you need to use a forward declaration?
+
+You need a forward declaration when you are including different classes and those classes would create an infinite include loop.
